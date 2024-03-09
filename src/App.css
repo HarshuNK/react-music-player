@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#pnf{
+  margin-top: 300px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.music-card .card-hover{
+  position: absolute;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #222;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.music-card:hover .card-hover{
+  opacity: 1;
+  transform: scale(1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+#track{
+  position: relative;
+}
+
+#track #player{
+  position: fixed;
+  background-color: #22222254;
+  font-size: 2rem;
+  text-align: center;
+  top: 0;
+  right: 0;
+  width: calc(100% - 50%) ;
+  height:calc(45% - 5%);
+  z-index: 9999;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+#player .trackImg{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#player .btn-close{
+  float: right;
+}
+
+
+@media screen and (max-width: 760px) {
+  #track #player {
+    width: 100%;
+    height: cal(100% - 50%);
+    position: fixed;
+    left: 0;
+    bottom: 0;
   }
 }
